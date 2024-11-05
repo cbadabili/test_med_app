@@ -83,9 +83,10 @@ const InstantConsultation = () => {
                             <h3>Book appointments with minimal wait-time & verified doctor details</h3>
                             {filteredDoctors.length > 0 ? (
                                 filteredDoctors.map(doctor => (
-                                    <div key={doctor.name}>
-                                        <DoctorCardIC doctor={doctor} />
-                                        <button className="button" onClick={() => handleBookNow(doctor)}>Book Now</button>
+                                    <div className="doctor-cards-container">
+                                        {doctors.map((doctor, index) => (
+                                        <DoctorCardIC key={index} {...doctor} />
+                                        ))}
                                     </div>
                                 ))
                             ) : (
