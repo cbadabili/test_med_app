@@ -32,7 +32,12 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
     <div className="doctor-card-container">
       <div className="doctor-card-details-container">
         <div className="doctor-card-profile-image-container">
-          <img src={profilePic} alt={`${name}`} />
+            <img 
+                src={profilePic || "/doctor_avatar.png"} 
+                alt={name} 
+                className="doctor-avatar"
+                onError={(e) => e.target.src = "/doctor_avatar.png"} 
+            />
         </div>
         <div className="doctor-card-details">
           <div className="doctor-card-detail-name">{name}</div>

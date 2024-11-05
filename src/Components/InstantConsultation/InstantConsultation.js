@@ -97,43 +97,49 @@ const InstantConsultation = () => {
             </div>
 
             {selectedDoctor && (
-                <Popup open={true} closeOnDocumentClick onClose={cancelBooking}>
-                    <div className="booking-popup">
-                        {!isBooked ? (
-                            <>
-                                <img src={selectedDoctor.image} alt={selectedDoctor.name} className="doctor-avatar" />
-                                <h2>{selectedDoctor.name}</h2>
-                                <p>{selectedDoctor.speciality}</p>
-                                <p>{selectedDoctor.experience} years experience</p>
-                                <p>Ratings: <span className="stars">★★★★★</span></p>
+    <Popup open={true} closeOnDocumentClick onClose={cancelBooking}>
+        <div className="booking-popup">
+            {!isBooked ? (
+                <>
+                    <img 
+                        src={selectedDoctor.image || "/doctor_avatar.png"} 
+                        alt={selectedDoctor.name} 
+                        className="doctor-avatar"
+                        onError={(e) => e.target.src = "/doctor_avatar.png"} 
+                    />
+                    <h2>{selectedDoctor.name}</h2>
+                    <p>{selectedDoctor.speciality}</p>
+                    <p>{selectedDoctor.experience} years experience</p>
+                    <p>Ratings: <span className="rating-stars">★★★★★</span></p>
 
-                                <label>Name:</label>
-                                <input
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    placeholder="Enter your name"
-                                />
-                                <label>Phone Number:</label>
-                                <input
-                                    type="tel"
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
-                                    placeholder="Enter your phone number"
-                                />
-                                <button onClick={confirmBooking} className="button">Book Now</button>
-                            </>
-                        ) : (
-                            <>
-                                <h3>Appointment Booked!</h3>
-                                <p>Name: {name}</p>
-                                <p>Phone Number: {phone}</p>
-                                <button onClick={cancelBooking} className="button cancel-button">Cancel Appointment</button>
-                            </>
-                        )}
-                    </div>
-                </Popup>
+                    <label>Name:</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Enter your name"
+                    />
+                    <label>Phone Number:</label>
+                    <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="Enter your phone number"
+                    />
+                    <button onClick={confirmBooking} className="button">Book Now</button>
+                </>
+            ) : (
+                <>
+                    <h3>Appointment Booked!</h3>
+                    <p>Name: {name}</p>
+                    <p>Phone Number: {phone}</p>
+                    <button onClick={cancelBooking} className="button cancel-button">Cancel Appointment</button>
+                </>
             )}
+        </div>
+    </Popup>
+)}
+
         </center>
     );
 };
