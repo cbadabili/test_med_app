@@ -1,7 +1,7 @@
-import logo from './logo.svg'; 
+//import logo from './logo.svg'; 
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import React, { useEffect } from 'react';
+//import React, { useEffect } from 'react';
 // Import components for routing from react-router-dom library
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing_Page from './Components/Landing_Page/Landing_Page';
