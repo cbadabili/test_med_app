@@ -10,6 +10,13 @@ const Navbar = () => {
       <Link to="/signup" className="nav-item">Sign Up</Link>
       <Link to="/login" className="nav-item">Login</Link>
       <Link to="/instant-consultation" className="nav-item">Instant Consultation</Link>
+      <div className="dropdown">
+            <button className="dropbtn">User Profile</button>
+            <div className="dropdown-content">
+                <Link to="/profile">Profile</Link>
+                <Link to="/reports">Your Reports</Link>
+            </div>
+      </div>
     </div>
   );
 };
