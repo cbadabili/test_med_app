@@ -129,9 +129,9 @@ useEffect(() => {
         </form>
       ) : (
         <div className="profile-details">
-          <h2>Welcome, "Cedric"</h2>
-          <p><b>Email:</b> "cbadabili@gmail.com"</p>
-          <p><b>Phone:</b> "77888198"</p>
+          <h2>Welcome, {userDetails.name}</h2>
+          <p><b>Email:</b> {userDetails.email}</p>
+          <p><b>Phone:</b> {userDetails.phone}</p>
           <button onClick={handleEdit} className="edit-button">Edit</button>
         </div>
       )}
