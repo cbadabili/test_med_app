@@ -11,6 +11,8 @@ import InstantConsultation from './Components/InstantConsultation/InstantConsult
 import ProfileCard from './Components/ProfileCard/ProfileCard';
 import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 import Notification from './Components/Notification/Notification';
+import ReviewForm from './Components/ReviewForm/ReviewForm';
+import Reviews from './Components/Reviews/Reviews';
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
     <div className="App">
         {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
+            <ReviewForm />
+            <Reviews />
             <div>
                 <Notification /> {/* Place Notification in a separate div */}
             </div>
